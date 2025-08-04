@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Document</title>
+  </head>
+  <body class="flex justify-center items-center h-100">
+    <div
+      id="sms"
+      class="bg-[#27374D] p-5 rounded-3xl flex flex-col items-center gap-5 sm:m-0 m-3 shadow-xl/30 visually-hidden"
+    >
+      <h1 class="text-center text-[#DDE6ED] text-3xl font-black" id="result_game">
+        Нажми на начать игру!
+      </h1>
+      <button
+        id="okey_btn"
+        class="bg-[#9DB2BF] text-[#27374D] font-bold sm:text-2xl px-3 py-2 sm:w-70 w-50 rounded-xl hover:shadow-xl/30 active:shadow-none"
+      >
+        Хорошо
+      </button>
+    </div>
+    <div
+      id="game"
+      class="bg-[#27374D] p-5 rounded-3xl flex flex-col items-center gap-5 sm:m-0 m-3 shadow-xl/30"
+    >
+      <h1 class="text-center text-[#DDE6ED] text-3xl font-black">
+        Угадай число!
+      </h1>
+      <button
+        id="start_btn"
+        class="bg-[#9DB2BF] text-[#27374D] font-bold sm:text-2xl px-3 py-2 sm:w-70 w-50 rounded-xl hover:shadow-xl/30 active:shadow-none"
+      >
+        Начать игру
+      </button>
+      <form class="flex flex-col items-center gap-5 text-[#DDE6ED]">
+        <label for="title" class="sm:text-2xl">Угадай число от 0 до 50</label>
+        <input
+          id="input_data"
+          type="number"
+          class="bg-[#9DB2BF] text-[#27374D] sm:text-3xl font-black text-center rounded-lg sm:w-70 w-50 h-9"
+        />
+        <button
+          id="check_btn"
+          class="bg-[#9DB2BF] text-[#27374D] font-bold sm:text-2xl px-1 py-2 sm:w-70 w-50 rounded-xl hover:shadow-xl/30 active:shadow-none"
+        >
+          Проверить
+        </button>
+      </form>
+      <p class="text-[#F9CF93] sm:text-xl font-black" id="result">
+        Я готов
+      </p>
+      <p class="text-[#DDE6ED] sm:text-2xl text-xl font-black">
+        Осталось попыток: <span class="text-[#F8F3D9]" id="life">5</span>
+      </p>
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
