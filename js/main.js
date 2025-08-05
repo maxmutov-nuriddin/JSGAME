@@ -11,21 +11,18 @@ let rGame = document.querySelector("#result_game");
 let rNumb;
 let lNumb;
 
-localStorage.setItem("numb", Math.ceil(Math.random() * 5));
-
 life.textContent = "";
 
 result.textContent = "Нажми на старт";
-lNumb = localStorage.getItem("numb");
-
-life.textContent = lNumb--;
 
 sBtn.addEventListener("click", (e) => {
   e.preventDefault();
   rNumb = Math.floor(Math.random() * 50);
+  lNumb = Math.ceil(Math.random() * 5);
+
+  life.textContent = lNumb--;
 
   result.textContent = "Я готов";
-  console.log("da");
 
   cBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -69,5 +66,4 @@ oBtn.addEventListener("click", (e) => {
   location.reload();
   game.classList.remove("visually-hidden");
   sms.classList.add("visually-hidden");
-  localStorage.clear();
 });
