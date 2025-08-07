@@ -7,6 +7,10 @@ let sms = document.querySelector("#sms");
 let game = document.querySelector("#game");
 let oBtn = document.querySelector("#okey_btn");
 let rGame = document.querySelector("#result_game");
+let sMusic = new Audio("/music/fon-music.mp3");
+let gOver = new Audio("/music/game-over.mp3");
+let wMusic = new Audio("/music/win-game.mp3");
+let gStart = new Audio("/music/game-start.mp3");
 
 let rNumb;
 let lNumb;
@@ -20,8 +24,13 @@ sBtn.addEventListener("click", (e) => {
   rNumb = Math.floor(Math.random() * 50);
   lNumb = Math.ceil(Math.random() * 5);
 
-  life.textContent = lNumb--;
+  gStart.play();
 
+  sMusic.loop = true;
+  sMusic.volume = 0.8;
+  sMusic.play();
+
+  life.textContent = lNumb--;
   result.textContent = "Я готов";
 
   cBtn.addEventListener("click", (e) => {
@@ -40,6 +49,8 @@ sBtn.addEventListener("click", (e) => {
     } else if (rNumb == fData.value) {
       life.textContent = "";
       rGame.textContent = "Поздравляю ты угодал 😊!";
+      sMusic.pause();
+      wMusic.play();
       fData.value = "";
       game.classList.add("visually-hidden");
       sms.classList.remove("visually-hidden");
@@ -49,6 +60,8 @@ sBtn.addEventListener("click", (e) => {
       game.classList.add("visually-hidden");
       sms.classList.remove("visually-hidden");
       rGame.textContent = "Tы проиграл 😔!";
+      sMusic.pause();
+      gOver.play();
     }
   });
 });
