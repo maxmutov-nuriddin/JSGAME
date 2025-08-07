@@ -59,7 +59,7 @@ sBtn.addEventListener("click", (e) => {
     if (lNumb == -1) {
       game.classList.add("visually-hidden");
       sms.classList.remove("visually-hidden");
-      rGame.textContent = "Tы проиграл 😔!";
+      rGame.textContent = `Tы проиграл 😔! ${rNumb}`;
       sMusic.pause();
       gOver.play();
     }
